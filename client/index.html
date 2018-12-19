@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="lib/vue.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>TD2 EID </title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="barMenu">
+            <form v-on:submit="ajouterRestaurant">
+            <label> Ajouter :</label>
+                <input type="text" placeholder="Nom" name="nom" required v-model="nom">                
+                <input type="text" placeholder="Cuisine" name="cuisine" required v-model="cuisine">                
+
+                <button>Ajouter</button>
+            </form>
+        </div>
+        <p>
+            <div class="barMenu">
+                <label>
+                Recherche : 
+                <input type="text" 
+                    v-on:input="chercherRestaurants"
+                    v-model="name"
+                >
+                </label>
+            </div>
+        </p>
+<h1>Nombre de restaurants : {{nbRestaurants}}</h1>
+        <table class="responstable">
+            <tr>
+                <th>Nom</th>
+                <th>Cuisine </th>
+                <th></th>
+                <th>Page: {{page}}</th>
+            </tr>
+            <tbody>
+                <tr v-for="r,index in restaurants"  v-bind:style="{backgroundColor:getColor(index)}"
+                    v-bind:class="{bordureRouge:(index === 2)}">
+                    <td>{{r.name}}</td>
+                    <td> {{r.cuisine}}</td>
+                    <td class="actions" v-on:click="supprimerRestaurant(r._id)">Supprimer</td>
+                    <td class="actions" v-on:click="modifierRestaurant0(r)">Modifier</td>
+
+                </tr>
+            </tbody>
+        </table>
+        <button v-on:click="pageDebut">Debut</button>
+        <button v-on:click="pagePrecedente">Precedent</button>
+        <button v-on:click="pageSuivante">Suivant</button>
+        <button v-on:click="pageFin">Fin</button>
+
+        <br><br>
+        <div class="barMenu">
+            <form v-on:submit="modifierRestaurant1">
+
+                <label> Modifier: </label>
+                <input type="text" name="nom" required v-model="nameModif">                
+                <input type="text" name="cuisine" required v-model="cuisineModif">
+                <input type="hidden" name="id" required v-model="id">
+                <button>Modifier</button>
+
+            </form>
+    </div>
+   
+   
+    </div>
+    <br>
+    
+
+</body>
+
+</html>
