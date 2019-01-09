@@ -23,7 +23,7 @@
             <v-layout row wrap>
               <v-flex
                 v-for="restaurant, index of datasRestaurants.restaurants"
-                xs4
+                xs12
                 :key="restaurant._id"
               >
                 <app-restaurant

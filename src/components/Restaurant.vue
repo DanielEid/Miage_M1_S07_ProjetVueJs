@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-hover>
-      <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`" class="mx-auto">
-        <v-btn color="blue" dark small absolute right top fab v-show="hover" @click="goToDetail()">
+      <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
+        <v-btn color="green" dark small absolute right top fab v-show="hover" @click="goToDetail()">
           <v-icon>add</v-icon>
         </v-btn>
-        <v-img :src="image" aspect-ratio="2.75" @load="onLoadImage" @error="onLoadImageError">
+        <!--<v-img :src="image" aspect-ratio="2.75" @load="onLoadImage" @error="onLoadImageError">-->
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
