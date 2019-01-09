@@ -4,7 +4,7 @@
       <!-- point d'entré -->
       <router-view
         v-on:reload-restaurants="reloadRestaurants"
-        :datasRestaurants="{restaurants: restaurants, nbRestaurants: nbRestaurants, randomImages: randomImages}"
+        :datasRestaurants="{restaurants: restaurants, nbRestaurants: nbRestaurants}"
         :numberOfPages="numberOfPages"
       ></router-view>
 
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import randomImagesApi from "./api/RandomImages.js";
+
 
 export default {
   name: "app",
@@ -30,8 +30,6 @@ export default {
     return {
       restaurants: [],
       nbRestaurants: 0,
-      randomImages: [],
-      randomImagesObject: [],
       numberOfPages: 1,
       loading: true,
       cartActivated: false
@@ -55,40 +53,9 @@ export default {
           console.log(err);
         });
 
-      randomImagesApi
-        .images("restaurant", 20)
-        .then(imageResult => {
-          console.log(imageResult);
-
-          imageResult.data.result.items.forEach(item => {
-            this.randomImages.push(item.media);
-          });
-          this.loadImages();
-          //console.log(this.randomImages);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+       
     },
-    loadImages() {
-      var randomImagesCount = 0;
-      var randomImagesCountError = 0;
 
-      this.randomImages.forEach(item => {
-        var img = new Image();
-        img.onload = () => {
-          //randomImagesCount++;
-          //console.log(randomImagesCount);
-          this.randomImagesObject.push(img);
-        };
-        /*img.onerror = () => {
-          randomImagesCountError++;
-          console.log("Error:" + randomImagesCountError);
-        };*/
-        img.src = item;
-        //this.randomImagesObject.push(img);
-      });
-    }
   }
 };
 </script>

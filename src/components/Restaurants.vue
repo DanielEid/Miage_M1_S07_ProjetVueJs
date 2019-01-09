@@ -32,7 +32,7 @@
                   :cuisine="restaurant.cuisine"
                   v-on:reload-restaurants="reload()"
                   :grades="restaurant.grades"
-                  :image="getRandomImage()"
+               
                 ></app-restaurant>
               </v-flex>
             </v-layout>
@@ -76,11 +76,7 @@ export default {
       console.log("i'm reloading");
       this.$emit("reload-restaurants", this.page, this.pageSize);
     },
-    getRandomImage() {
-      let random = Utils.random(0, this.datasRestaurants.randomImages.length);
 
-      return this.datasRestaurants.randomImages[random];
-    },
     inputPagination() {
       console.log("pagination: " + this.page);
     }
