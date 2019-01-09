@@ -1,4 +1,3 @@
-
 # Projet vuejs a rendre pour le jeudi 10/01/19
 
 ## Membres du projet :
@@ -16,7 +15,7 @@ npm install
 npm run dev
 
 * Construction pour production et minifiée
-npm run build
+npm run build 
 
 ### Serveur
 
