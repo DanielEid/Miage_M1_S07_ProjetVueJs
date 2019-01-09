@@ -1,5 +1,5 @@
 
-##Projet vuejs a rendre pour le jeudi 10/01/19
+# Projet vuejs a rendre pour le jeudi 10/01/19
 
 ## Membres du projet :
 
@@ -8,7 +8,7 @@
 
 ## Utilisation
 
-# Client
+### Client
 Installation des dépendances
 npm install
 
@@ -18,7 +18,7 @@ npm run dev
 * Construction pour production et minifiée
 npm run build
 
-# Serveur
+### Serveur
 
 * Utiliser le serveur des TP
 
