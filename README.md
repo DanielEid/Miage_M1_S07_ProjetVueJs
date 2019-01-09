@@ -1,10 +1,27 @@
 
-# ProjetVue.js - M1 MIAGE - Restaurant
-
-[Consignes du projet](http://miageprojet2.unice.fr/Intranet_de_Michel_Buffa/Master_1_Miage_2018-2019#Mini_projet_.c3.a0_rendre_.c3.a0_la_rentr.c3.a9e_(pour_le_jeudi_10_Janvier).2c_en_bin.c3.b4me)
+##Projet vuejs a rendre pour le jeudi 10/01/19
 
 ## Membres du projet :
 
 - Daniel EID
 - Adrien ZOCCO
+
+## Utilisation
+
+# Client
+Installation des dépendances
+npm install
+
+* Construction dev configurée en localhost:8081
+npm run dev
+
+* Construction pour production et minifiée
+npm run build
+
+# Serveur
+
+* Utiliser le serveur des TP
+
+
+
 
