@@ -10,6 +10,7 @@
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
                 <span class="headline">{{name}}</span>
+				
               </v-flex>
             </v-layout>
           </v-container>
@@ -35,8 +36,8 @@
         </div>
 
         <v-card-actions>
-          <v-btn flat color="info" @click="updateRestaurant()">Modifier</v-btn>
-          <v-btn flat color="error" @click="deleteRestaurant()">Supprimer</v-btn>
+          <v-btn color="yellow" @click="updateRestaurant()">Modifier</v-btn>
+          <v-btn color="red" @click="deleteRestaurant()">Supprimer</v-btn>
         </v-card-actions>
       </v-card>
     </v-hover>
