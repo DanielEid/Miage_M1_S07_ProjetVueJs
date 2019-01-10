@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <v-app>
+	<app-cart></app-cart>
       <router-view
         v-on:reload-restaurants="reloadRestaurants"
         :datasRestaurants="{restaurants: restaurants, nbRestaurants: nbRestaurants}"
         :numberOfPages="numberOfPages"
       ></router-view>
 
-      <app-cart></app-cart>
+      
 
       <v-footer dark height="auto">
         <v-card class="flex" flat tile>

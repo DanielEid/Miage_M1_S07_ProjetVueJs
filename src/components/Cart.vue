@@ -6,8 +6,10 @@
        
       </v-list>
     </v-bottom-sheet>
-    <v-btn fixed dark fab bottom right color="green" @click="activated=!activated">
+    <v-btn dark top color="blue" @click="activated=!activated">
+	
       <v-icon>shopping_cart</v-icon>
+	  Vottre panier
     </v-btn>
   </div>
 </template>
