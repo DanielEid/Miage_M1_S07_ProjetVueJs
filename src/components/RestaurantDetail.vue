@@ -2,21 +2,23 @@
   <div id="detail">
     <v-parallax dark :src="image">
       <v-layout align-center column justify-center>
-        <h1 class="display-2 font-weight-thin mb-3">{{restaurant.name}}</h1>
-        <h1 class="subheading">{{restaurant.cuisine}}</h1>
-        <p id="address">{{addressGeocoder}}</p>
+        <h1 class="display-2 font-weight-thin mb-3 colored">{{restaurant.name}}</h1>
+        <h3>Type de cuisine</h3>
+        <h1 class="subheading colored">{{restaurant.cuisine}}</h1>
+        <h3>Addresse du restaurant</h3>
+        <p class ="colored" id="address">{{addressGeocoder}}</p>
         <v-btn @click="goToMenu">Passer une commande</v-btn>
       </v-layout>
     </v-parallax>
     <v-layout align-center column justify-center>
-      <h2>Vous pouvez nous trouver ici !</h2>
+      <h2>Localisation</h2>
       <div id="mapContainer">
         <l-map id="map" :zoom="13" :center="coordinatesGeocoder">
           <l-tile-layer :url="url"></l-tile-layer>
           <l-marker :lat-lng="coordinatesGeocoder"></l-marker>
         </l-map>
       </div>
-      <h2>Nos notes !</h2>
+      <h2>Avis</h2>
 
       <v-list two-line>
         <v-flex v-for="grade in restaurant.grades">
@@ -64,13 +66,11 @@ export default {
         ).then(result => {
           console.log(result);
           if (result.length > 0) {
-            console.log("ici");
             this.addressGeocoder = result[0].display_name;
             this.coordinatesGeocoder = [
               parseInt(result[0].lat),
               parseInt(result[0].lon)
             ];
-            //console.log(this.coordinatesGeocoder);
           } else {
             this.addressGeocoder =
               this.restaurant.address.building +
@@ -103,11 +103,15 @@ export default {
 </script>
 
 <style scoped>
-#address {
-  font-style: bold;
-  color: white;
-  background-color: black;
+#detail{
+  background-color: white;
 }
+.colored{
+  font-style: italic;
+  color: #009688;
+  background-color: white;
+}
+
 h1 {
   color: white;
 }
@@ -124,6 +128,12 @@ h1 {
 h2 {
   background-color: #ffffff;
   color: #009688;
+  font-style: italic;
+}
+
+h3 {
+  background-color: #ffffff;
+  color:deepskyblue;
   font-style: italic;
 }
 </style>

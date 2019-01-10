@@ -1,17 +1,14 @@
 <template>
   <div id="app">
     <v-app>
-      <!-- point d'entré -->
       <router-view
         v-on:reload-restaurants="reloadRestaurants"
         :datasRestaurants="{restaurants: restaurants, nbRestaurants: nbRestaurants}"
         :numberOfPages="numberOfPages"
       ></router-view>
 
-      <!--Cart-->
       <app-cart></app-cart>
 
-      <!--Footer-->
       <v-footer dark height="auto">
         <v-card class="flex" flat tile>
   
@@ -40,9 +37,6 @@ export default {
   },
   methods: {
     reloadRestaurants(page = 1, pageSize = 10) {
-      console.log("i'm reloading - App");
-      console.log("page: " + page);
-
       this.API.getRestaurants(page - 1, pageSize)
         .then(result => {
           this.restaurants = result.data;
@@ -51,18 +45,15 @@ export default {
         })
         .catch(err => {
           console.log(err);
-        });
-
-       
+        });       
     },
-
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "BlinkMacSystemFont", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

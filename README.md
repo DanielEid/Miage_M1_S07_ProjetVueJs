@@ -7,6 +7,7 @@
 
 ## Utilisation
 
+Le projet est accésible sur localhost:8081
 ### Client
 Installation des dépendances
 

@@ -7,10 +7,10 @@
         <v-slider
           v-model="pageSize"
           color="black"
-          label="Affichage restaurant"
-          hint="Nombre de restaurants à afficher"
+          label="Affichage des restaurants"
+          hint="Nombre de restaurantsqu'il faut afficher"
           min="1"
-          max="100"
+          max="50"
 		  
           :step="5"
           thumb-label
@@ -73,20 +73,15 @@ export default {
   },
   methods: {
     reload() {
-      console.log("i'm reloading");
       this.$emit("reload-restaurants", this.page, this.pageSize);
     },
 
     inputPagination() {
-      console.log("pagination: " + this.page);
     }
   }
 };
 </script>
 
-/**
-scoped = ne se s'applique pas aux composants inclus
- */
 <style scoped>
 p {
   font-style: italic;

@@ -2,10 +2,9 @@
   <div>
     <v-hover>
       <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
-        <v-btn color="green" dark small absolute right top fab v-show="hover" @click="goToDetail()">
+        <v-btn color="blue" dark small absolute right top fab v-show="hover" @click="goToDetail()">
           <v-icon>add</v-icon>
         </v-btn>
-        <!--<v-img :src="image" aspect-ratio="2.75" @load="onLoadImage" @error="onLoadImageError">-->
           <v-container fill-height fluid>
             <v-layout fill-height>
               <v-flex xs12 align-end flexbox>
@@ -55,8 +54,6 @@ export default {
     deleteRestaurant() {
       this.API.deleteRestaurant(this.id)
         .then(result => {
-          console.log(result);
-          console.log("dans then Restaurant");
           this.$emit("reload-restaurants");
         })
         .catch(error => {
@@ -64,7 +61,6 @@ export default {
         });
     },
     goToDetail() {
-      console.log(this.image);
       localStorage["image"] = this.image;
       this.$router.push({
         name: "detail",
@@ -81,20 +77,19 @@ export default {
       return (total / this.grades.length / 4).toFixed(2);
     },
     onLoadImage() {
-      console.log("loading image...");
+      this.image =
+        "https://www.mychefcom.com/hs-fs/hubfs/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg?width=954&height=636&name=photo-culinaire-pexels.jpg";
+    
     },
     onLoadImageError() {
-      console.log("failed loading image...");
       this.image =
-        "https://file.videopolis.com/D/9dc9f4ba-0b2d-4cbb-979f-fee7be8a4198/8485.11521.brussels.the-hotel-brussels.amenity.restaurant-AD3WAP2L-13000-853x480.jpeg";
+        "https://www.mychefcom.com/hs-fs/hubfs/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg?width=954&height=636&name=photo-culinaire-pexels.jpg";
     }
   }
 };
 </script>
 
-/**
-scoped = ne se s'applique pas aux composants inclus
- */
+
 <style scoped>
 .headline {
   background-color: white;
