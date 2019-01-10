@@ -9,7 +9,7 @@
     <v-btn dark top color="blue" @click="activated=!activated">
 	
       <v-icon>shopping_cart</v-icon>
-	  Vottre panier
+	  Votre panier
     </v-btn>
   </div>
 </template>

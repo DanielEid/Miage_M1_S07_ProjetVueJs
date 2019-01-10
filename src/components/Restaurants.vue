@@ -7,8 +7,8 @@
         <v-slider
           v-model="pageSize"
           color="black"
-          label="Affichage des restaurants"
-          hint="Nombre de restaurantsqu'il faut afficher"
+          label="Nombre de restaurants"
+          hint=""
           min="1"
           max="50"
 		  
