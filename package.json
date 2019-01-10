@@ -1,8 +1,8 @@
 {
-  "name": "primat_curinga_vuejs",
+  "name": "Daniel_EID_Adrien_Zocco_vuejs",
   "version": "1.0.0",
-  "description": "Mini site de gestion de restaurants en VueJS, dans le cadr",
-  "author": "Gabriel Curinga <gabriel.curinga@outlook.fr>",
+  "description": "Site de gestion des restaurant en vujs",
+  "author": "Daniel EID <daniel.eid@etu.unice.fr>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
